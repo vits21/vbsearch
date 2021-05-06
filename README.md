@@ -1,7 +1,7 @@
 # vbsearch
 This project is to extend binary search to non-scalar vectorized data. It based on “The software implementation of the vector data dichotomy” paper [1].
 Binary and similar searching aptronyms are widely used and demonstrating the great performance O(log N). They are not directly applicable for vectors and other data that has no less/greater relation defined, unfortunately. Using linear search for relatively big sets of data has not a lot of sense. It is too slow O(N). 
-Thise code implement the following algorithm:
+This code implements the following algorithm:
 - create function that will scalarize original vectors and satisfy two conditions: small number of collisions and reasonably small PCU consumptions
 - sort original data using qsort or similar function using scalars calculated above. If no matches for scalars found it automatedly means that not matches for original vector found, so we are good
 - if scalars matched there are extra steps require to define if this is a real or false match. Look around matched array element for exact vector match until scalar matched or array limits reached.
